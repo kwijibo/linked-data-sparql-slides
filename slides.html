@@ -46,6 +46,19 @@
 </section>
 
 <section>
+  <h4> Metcalfe's Law</h4>
+  <figure>
+    <img alt="Metcalfe's Law" src="images/Network_effect.png" style="height:auto">
+  </figure>
+  <details> 
+  Each extra node in a network increases the number of possible connections, making every node in the network potentially more useful.
+  <p> In 1995 Robert Metcalfe predicted the internet would catastrophically collapse in the next year, and promised to eat his words if it didn't. In his 1997 keynote at the WWW conference, he blended a paper copy of his column in some liquid and consumed the mushy pulp.
+  </details>
+</section>
+
+
+
+<section>
   <h3>Links make data reusable</h3>
     <ul>
       <li>Discoverable in different contexts
@@ -55,16 +68,10 @@
 
 </section>
 
+
 <section>
   <figure>
     <img alt="connections create routes for discovery" src="images/relfinder.png">
-  </figure>
-</section>
-
-<section>
-  <h3> Metcalfe's Law</h3>
-  <figure>
-    <img alt="Metcalfe's Law" src="images/Network_effect.png" style="height:auto">
   </figure>
 </section>
 
@@ -84,9 +91,9 @@
 </section>
 
 <section>
-<figure>
-  <figcaption>Sharing information can be hard</figcaption>
+<figure class="dark-image">
   <img src="images/sharinginformationishard.jpg" alt="Sharing">
+ <figcaption>Sharing information can be hard</figcaption>
 </figure>
 </section>
 
@@ -108,19 +115,16 @@
     <li>Data must be licensed if it is to be usable
     <li>Data is not the same as creative content — needs a data specific license
     <li>However, your data may contain creative content (abstracts, reviews, etc)
-    <li>Use CC0, ODC PDDL or another suitable data license
   </ul>
 </section>
-
 <section>
-  <h3>Open Data Licenses</h3>
-
+     <h4>Open Data Licenses  </h4>
+     <cite>http://opendatacommons.org/licenses/</cite>
   <ul>
-    <li>Public Domain Dedication and License (PDDL) — “Public Domain for data/databases”
-    <li>Attribution License (ODC-By) — “Attribution for data/databases”
-    <li>Open Database License (ODC-ODbL) — “Attribution Share-Alike for data/databases”
+    <li>Public Domain Dedication and License (PDDL) — <small>“Public Domain for data/databases”</small>    
+    <li>Attribution License (ODC-By) — <small>“Attribution for data/databases”</small>
+    <li>Open Database License (ODC-ODbL) —<small> “Attribution Share-Alike for data/databases”</small>
   </ul>
-  <cite>http://opendatacommons.org/licenses/</cite>
   <details>
     Consider that you want your data to be used, so restrictions on use may stop it being used widely.
   </details>
@@ -133,6 +137,26 @@
       <li>Waive all rights
       <li>Ask people nicely to attribute, share-alike, use open standards, and be kind to animals
     </ol>
+</section>
+
+<section>
+
+            <p>
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+            </p>
+                    <p>
+                    Version 2, December 2004
+                    </p>
+
+<p>
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+</p>
+
+<p>
+0. You just DO WHAT THE FUCK YOU WANT TO.
+</p>
 </section>
 
 <section>
@@ -201,7 +225,7 @@
   <details> </details>
 </section>
 
-<section>
+<section class="practical">
 <h2>Practical: Data Modeling</h2>
 
 <p> 
@@ -214,7 +238,7 @@ Go to
 
 </section>
 
-<section>
+<section class="practical">
   <h3>Practical: Data Modeling</h3>
   <p> Look at the first record in the table, and draw it as graph diagram.</p> 
   <ul> 
@@ -224,13 +248,23 @@ Go to
   </ul>
 </section>
 
-<section>
+<section class="practical">
   <h3>Practical: thinking about data</h3>
   <p>Dream up at least 3 interesting questions you could ask of this data. eg: Who is the youngest author?</p>
   <p>Dream up 2 questions you could ask if you had more data (more books, or more information about the books or authors or places, for example).
   </p>
   <p>What data would you need to connect with to answer your questions?</p>
 </section>
+
+<section>
+  <h3>Technical Solution: RDF</h3>
+  <ul>
+    <li><q>Graph based</q> data structure
+    <li class="highlight">Designed for being published on the Web
+  </ul>
+</section>
+
+
 
 <section>
   <h3>RDF and the Web</h3>
@@ -380,8 +414,8 @@ by only needing one vocabulary for everything.
 
 <section>
 <figure>
-  <figcaption>Knowledge Graph</figcaption>
   <img alt="" src="images/knowledgegraph.png">
+  <figcaption>Knowledge Graph</figcaption>
 </figure>
     <details>
     <p>
@@ -404,17 +438,19 @@ by only needing one vocabulary for everything.
 </section>
 
 <section>
+
 <h4>Finding Vocabularies</h4>
    <figure>
     <img alt="" src="images/vocab-search.png">
   </figure>
-  <p>
+    <footer>
     <a href="http://lov.okfn.org/dataset/lov/">Linked Open Vocabularies</a>
-  </p>
+  </footer>
+
 </section>
 
-<section>
-<h2>Practical: Google Refine</h2>
+<section class="practical">
+<h4>Practical: Google Refine</h4>
 <figure>
   <img src="images/googlerefine.png" alt="Google Refine is a tool for cleaning and transforming data">
   </figure>
@@ -422,25 +458,67 @@ by only needing one vocabulary for everything.
       Google Refine is a powerful tool for working with data
   </details>
 </section>
-<section>
-  <h3>Google Refine: RDF Extension</h3>
+<section class="practical">
+  <h4>Google Refine: RDF Extension</h4>
   <figure>
   <img src="images/grefinerdfextension.png" alt="the RDF extension lets you map the table of data to RDF">
   </figure>
 </section>
 
-<section> 
+<section class="practical"> 
 <p>
 <a href="http://code.google.com/p/google-refine/wiki/Downloads">Download Google Refine</a> and install the <a href="http://refine.deri.ie/">RDF Extension</a>.
 </p>
-<p>Start Google Refine</p>
-<p> Start a new project with <a href="http://bit.ly/ecco-tcp-texts-spreadsheet">http://bit.ly/ecco-tcp-texts-spreadsheet</a>
+<p>Start Google Refine <img alt="" src="images/google-refine-icon.png" style="width:3em;height:auto;"></p>
+<p> Start a new project with the spreadsheet from the last exercise (<a href="http://bit.ly/ecco-tcp-texts-spreadsheet">http://bit.ly/ecco-tcp-texts-spreadsheet</a>)
 </p>
 </section>
 
-<section>
+<section class="practical">
+  <figure>
+  <figcaption>Load the file</figcaption>  
+  <img alt="" src="images/googlrefine-startproject.png">
+  </figure>
 
 </section>
+
+<section class="practical">
+  <figure>
+  <img alt="" src="images/googlerefine-createproject.png">
+  <figcaption>Click 'Create Project'</figcaption>  
+  </figure>
+
+</section>
+
+<section class="practical">
+  <figure>
+  <img alt="" src="images/googlerefine-rdf.png">
+  <figcaption>Click <kbd>RDF > Edit RDF Skeleton </kbd></figcaption>  
+  </figure>
+
+</section>
+
+<section class="practical">
+  <h4>Now we create our diagram from earlier...</h4>
+  <figure>
+  <img src="images/grefinerdfextension.png" alt="the RDF extension lets you map the table of data to RDF">
+  </figure>
+</section>
+
+<section class="practical">
+<h4>Instructions</h4>
+<ul>
+  <li>Recreate the model you drew out as an 'RDF Skeleton'. 
+  <li>Use <a href="">Linked Open Vocabularies</a> to find vocabulary terms 
+  <li>Click <kbd>add prefix</kbd> to import vocabularies (you might start with <kbd>bibo</kbd> and <kbd>dcterms</kbd>).
+  <li>Give every <strong>Thing</strong> an <code>rdf:type</code>
+</ul>
+</section>
+
+
+
+
+
 
 <section>
   <h3> Consuming RDF</h3>
@@ -450,10 +528,13 @@ by only needing one vocabulary for everything.
 </section>
 
 <section>
-  <h3> Follow-your-nose Browsing </h3>
+  <h4> Follow-your-nose Browsing </h4>
   <figure>
     <img alt="linksailor screenshot" src="images/linksailor-twain.png">
   </figure>
+  <details>
+
+  </details>
 
 </section>
 
@@ -560,8 +641,10 @@ by only needing one vocabulary for everything.
 
 <section>
   <h3>Query Request</h3>
-  <p><em><code>GET</code></em> 
-  <code>http://example.info/sparql?query={urlencoded query}</code></p>
+  <p><small>
+    <code>GET</code></small><br>  <small><code>http://example.info/sparql?query=<strong class="highlight">{query}</strong></code>
+</small>
+  </p>
 </section>
 
 <section>
@@ -655,10 +738,12 @@ by only needing one vocabulary for everything.
 
   <section>
     <h3>Querying multiple datasets</h3>
-    <p>To query across two datasets for <em>Hamlet</em>, either</p>
+    <div>
+    To query across two datasets for <em>Hamlet</em>, either:
+    </div>
     <ol>
       <li>Both Datasets use the same URI for Hamlet, or
-      <li>One dataset links to the other dataset's URI for Hamlet. eg (<code>freebase:Hamlet owl:sameAs dbpedia:Hamlet</code>
+      <li>One dataset links to the other dataset's URI for Hamlet. eg (<code>freebase:Hamlet owl:sameAs dbpedia:Hamlet</code> )
     </ol>
   </section>
 
@@ -676,9 +761,10 @@ by only needing one vocabulary for everything.
     <figure>
       <img alt="Silk Workbench helps you automatically create links between datasets by configuring similarity metrics" src="images/silkworkbench.png">
    </figure>
+   <p><a href="https://www.assembla.com/spaces/silk/wiki/Silk_Workbench">Silk Workbench</a></p>
    <details>
      Silk Workbench helps you automatically create links between datasets by configuring similarity metrics
-  </details>
+    </details>
 </section>
 
 
@@ -722,7 +808,7 @@ WHERE
       Query if you only need a subset or no dump is available
       If there is no sparql endpoint, you might need to crawl the data
       </details>
-      </section>
+  </section>
 
 
 
@@ -734,9 +820,9 @@ WHERE
 </section>
 
   <section>
-    <h4>
+    <h3>
     Relationships in Graphs
-    </h4>
+    </h3>
     <details>
       Because graphs are so good at capturing how things are connected, a popular way to visualise RDF data is to show it as connected bubbles.
     </details>
@@ -746,6 +832,10 @@ WHERE
   <h4>
     LodLive
   </h4>
+  <figure>
+    <img alt="" src="images/lodlive.png">
+  </figure>
+
   </section>
    <section>
    <h4>
@@ -767,7 +857,9 @@ WHERE
      Relfinder
      </h4>
      <figure>
-       <video src="http://www.youtube.com/embed/G0r1G-duPcQ" poster="images/relfinder.png"></video>
+     <video src="http://www.youtube.com/watch?feature=player_detailpage&v=G0r1G-duPcQ" poster="images/relfinder.png"></video>
+
+     <iframe src="http://www.youtube.com/embed/G0r1G-duPcQ" frameborder="0" allowfullscreen></iframe>
     </figure>
    </section>
 
@@ -784,11 +876,12 @@ WHERE
    </p>
    </section>
    <section>
-     <h3>Visualising Space and Time</h3> 
+   <h3>Visualising Space and Time</h3> 
+   <figure><img src="images/space-and-time.gif"></figure>
    </section>
 
     <section>
-      <h3>UK Research Grants and Patent Applications</h3>
+      <h4>UK Research Grants and Patent Applications</h4>
       <a href="http://bis.clients.talis.com/">BIS Research Funding Explorer</a>
       <figure>
         <img alt="" src="images/bisvisualisation.png">
@@ -796,7 +889,7 @@ WHERE
     </section>
 
     <section>
-    <h3><a href="http://conflicthistory.com/#/period/1600-1630">Conflict History</a></h3>
+    <h4><a href="http://conflicthistory.com/#/period/1600-1630">Conflict History</a></h4>
         <figure>
         <img alt="" src="images/conflicthistory.png">
     </figure>
@@ -830,6 +923,47 @@ WHERE
   </details>    
   </section>
 
+  <section>
+    <h4>Browsing by similarity</h4>
+
+  <figure>
+    <img alt="" src="images/lda-schools.png">
+  </figure>
+<details>
+</details>
+
+    </section>
+
+  <section>
+    <h4>Browsing by comparison</h4>
+
+  <figure>
+    <img alt="" src="images/lda-schools-mincapacity.png">
+  </figure>
+  <details>
+  </details>
+
+  </section>
+
+  <section>
+  <h4>Similarity-based Recommendations: Seevl</h4>
+    <figure>
+      <img alt="" src="images/seevl.png">
+    </figure>
+    <details>
+      Other bands with the same musicians, record labels, etc
+    </details>
+  </section>
+
+  <section>
+  <h4>Similarity-based Recommendations: Aspire</h4>
+    <figure>
+      <img alt="" src="images/aspire-recommendations.jpg">
+    </figure>
+  <details>
+    Books that frequently occur in the same reading lists
+  </details>
+  </section>
 
 
  <section>
@@ -876,58 +1010,24 @@ WHERE
 </section>
 
 <section>
+
 <h2> Thanks </h2>
-  <p>Made with <a href="https://github.com/paulrouget/dzslides">DZSlides</a> by Paul Rouget</p>
-  <p>Licensed under<br><a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a></p>
-  
 <footer>
     Keith Alexander <br>
     <small>
       Twitter: @keithalexander <br>
       keithalexander@keithalexander.co.uk <br>
     </small>
+    <div class="credits">
+
+      <p>
+      Made with <a href="https://github.com/paulrouget/dzslides">DZSlides</a> by Paul Rouget
+      </p>
+  <p>Licensed under <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a></p>
+</div>
+
 </footer>
 </section>
-
-<section>
-    <h3>An incremental list</h3>
-    <ul class="incremental">
-      <li>Item 1
-      <li>Item 2
-      <li>Item 3
-    </ul>
-    <details>Some notes. They are only visible using onstage shell.</details>
-</section>
-
-<section>
-  <blockquote>
-    Who's brave enough to fly into something we all keep calling a death sphere?
-  </blockquote>
-</section>
-
-<section>
-    <h2>Part two</h2>
-</section>
-
-<section>
-    <figure> <!-- Figures are used to display images and videos fullpage -->
-      <img src="http://placekitten.com/g/800/600">
-      <figcaption>An image</figcaption>
-    </figure>
-    <details>Kittens are so cute!</details>
-</section>
-
-<section>
-    <figure> <!-- Videos are automatically played -->
-      <video src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" poster="http://www.mozilla.org/images/about/poster.jpg"></video>
-      <figcaption>A video</figcaption>
-    </figure>
-</section>
-
-<section>
-    <h2>End!</h2>
-</section>
-
 <!-- Your Style -->
 <!-- Define the style of your presentation -->
 
@@ -963,7 +1063,7 @@ WHERE
     font-size: 80px;
   }
   h3 {
-    margin: 100px 0 50px 100px;
+    margin: 50px 0 50px 50px;
   }
 
   ul, ol {
@@ -973,7 +1073,14 @@ WHERE
 
   p {
     margin: 75px;
-    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  cite {
+    font-size: smaller;
+    text-align: right;
   }
 
   dl {
@@ -1015,6 +1122,29 @@ WHERE
     margin: 70px;
     font-size: 50px;
   }
+
+  figure.dark-image figcaption {
+    color: white;
+    font-size: bigger;
+    margin-top: 30px;
+  }
+
+  section.practical *    {
+    font-size: smaller;
+  }
+  div.credits *
+  {
+    font-family: helvetica, arial, sans-seri ;
+    font-size: 60%;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+  }
+
+  .highlight {
+    background-color: yellow !important;
+  }
+
 
   footer {
     position: absolute;
