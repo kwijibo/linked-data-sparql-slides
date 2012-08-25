@@ -69,6 +69,73 @@
 </section>
 
 <section>
+<figure>
+  <img src="images/sharingiscaring.png" alt="Sharing is Good">
+  </figure>
+  <details>
+    <p>
+    Opening up your data can make it more discoverable and valuable. It also lets others add value to your data, linking to it, providing more information.
+
+    </p>
+    <p>
+    And the more people using your data, the more eyes to spot mistakes.
+    </p>
+  </details>
+</section>
+
+<section>
+<figure>
+  <figcaption>Sharing information can be hard</figcaption>
+  <img src="images/sharinginformationishard.jpg" alt="Sharing">
+</figure>
+</section>
+
+<section>
+<h3>Sharing and Linking can be hard</h3>
+
+<ul>
+  <li> Different names for the same thing
+  <li> Different vocabularies
+  <li> Dirty Data
+  <li> Different technical expertise and infrastructure requirements
+  <li> Licensing
+</ul>  
+</section>
+
+<section>
+  <h3>Licensing</h3>
+  <ul>
+    <li>Data must be licensed if it is to be usable
+    <li>Data is not the same as creative content — needs a data specific license
+    <li>However, your data may contain creative content (abstracts, reviews, etc)
+    <li>Use CC0, ODC PDDL or another suitable data license
+  </ul>
+</section>
+
+<section>
+  <h3>Open Data Licenses</h3>
+
+  <ul>
+    <li>Public Domain Dedication and License (PDDL) — “Public Domain for data/databases”
+    <li>Attribution License (ODC-By) — “Attribution for data/databases”
+    <li>Open Database License (ODC-ODbL) — “Attribution Share-Alike for data/databases”
+  </ul>
+  <cite>http://opendatacommons.org/licenses/</cite>
+  <details>
+    Consider that you want your data to be used, so restrictions on use may stop it being used widely.
+  </details>
+</section>
+
+<section>
+  <h3>Norms and Waivers</h3>
+  <cite>http://opendatacommons.org/norms/odc-by-sa/</cite>
+    <ol>
+      <li>Waive all rights
+      <li>Ask people nicely to attribute, share-alike, use open standards, and be kind to animals
+    </ol>
+</section>
+
+<section>
   <h3>How to create a system for Data that:</h3>
   <ul>
     <li>Machines can read
@@ -132,6 +199,37 @@
   </dd>
 </dl>
   <details> </details>
+</section>
+
+<section>
+<h2>Practical: Data Modeling</h2>
+
+<p> 
+Go to
+<a href="http://bit.ly/ecco-tcp-texts-spreadsheet">http://bit.ly/ecco-tcp-texts-spreadsheet</a>
+ ( and click <kbd>File > Download As > Comma Separated Values </kbd> ).
+ </p>
+
+ <p> Get paper and pen. </p>
+
+</section>
+
+<section>
+  <h3>Practical: Data Modeling</h3>
+  <p> Look at the first record in the table, and draw it as graph diagram.</p> 
+  <ul> 
+    <li>Bubble for <em>Things</em>
+    <li>Rectangle for <em>Text Values</em>
+    <li>(Labelled) Arrows for relationships between Things, and Things and Text
+  </ul>
+</section>
+
+<section>
+  <h3>Practical: thinking about data</h3>
+  <p>Dream up at least 3 interesting questions you could ask of this data. eg: Who is the youngest author?</p>
+  <p>Dream up 2 questions you could ask if you had more data (more books, or more information about the books or authors or places, for example).
+  </p>
+  <p>What data would you need to connect with to answer your questions?</p>
 </section>
 
 <section>
@@ -313,6 +411,35 @@ by only needing one vocabulary for everything.
   <p>
     <a href="http://lov.okfn.org/dataset/lov/">Linked Open Vocabularies</a>
   </p>
+</section>
+
+<section>
+<h2>Practical: Google Refine</h2>
+<figure>
+  <img src="images/googlerefine.png" alt="Google Refine is a tool for cleaning and transforming data">
+  </figure>
+  <details> 
+      Google Refine is a powerful tool for working with data
+  </details>
+</section>
+<section>
+  <h3>Google Refine: RDF Extension</h3>
+  <figure>
+  <img src="images/grefinerdfextension.png" alt="the RDF extension lets you map the table of data to RDF">
+  </figure>
+</section>
+
+<section> 
+<p>
+<a href="http://code.google.com/p/google-refine/wiki/Downloads">Download Google Refine</a> and install the <a href="http://refine.deri.ie/">RDF Extension</a>.
+</p>
+<p>Start Google Refine</p>
+<p> Start a new project with <a href="http://bit.ly/ecco-tcp-texts-spreadsheet">http://bit.ly/ecco-tcp-texts-spreadsheet</a>
+</p>
+</section>
+
+<section>
+
 </section>
 
 <section>
@@ -512,6 +639,90 @@ by only needing one vocabulary for everything.
     thedatahub.org is a user-contributed catalogue of datasets run by the OKFN
   </details>
 </section>
+
+<section>
+  <h4>Sindice - a semantic web search engine</h4>
+  <figure>
+  <img alt="" src="images/sindice.png">
+  </figure>
+  <details>
+    <p>
+    Sindice crawls the web of RDF to return you RDF documents matching a free text-search.
+   You can group results by dataset, and use it to find datasets you might link to. 
+    </p>
+  </details>
+  </section>
+
+  <section>
+    <h3>Querying multiple datasets</h3>
+    <p>To query across two datasets for <em>Hamlet</em>, either</p>
+    <ol>
+      <li>Both Datasets use the same URI for Hamlet, or
+      <li>One dataset links to the other dataset's URI for Hamlet. eg (<code>freebase:Hamlet owl:sameAs dbpedia:Hamlet</code>
+    </ol>
+  </section>
+
+<section>
+  <h4>Ways to get links: find them</h4>
+    <figure>
+      <img alt="sameAs.org is a web service that provides equivalent URIs" src="images/sameas.png">
+   </figure>
+<details>
+</details>
+</section>
+
+<section>
+  <h4>Ways to get links: make them</h4>
+    <figure>
+      <img alt="Silk Workbench helps you automatically create links between datasets by configuring similarity metrics" src="images/silkworkbench.png">
+   </figure>
+   <details>
+     Silk Workbench helps you automatically create links between datasets by configuring similarity metrics
+  </details>
+</section>
+
+
+
+  <section>
+    <h3>How to query multiple datasets</h3>
+    <ol>
+      <li>Federated Query
+      <li>Put all the data in the same triple store
+    </ol>
+  </section>
+
+  <section>
+<h4>Federated Query</h4>
+<pre>
+<code>
+PREFIX foaf:   &lt;http://xmlns.com/foaf/0.1/&gt;
+SELECT ?name
+FROM &lt;http://example.org/myfoaf.rdf&gt;
+WHERE
+{
+  &lt;http://example.org/myfoaf/I&gt; foaf:knows ?person .
+  SERVICE &lt;http://people.example.org/sparql&gt; { 
+    ?person foaf:name ?name . } 
+}
+</code>
+</pre>
+</section>
+
+
+
+  <section>
+    <h4>Ways to get more data</h4>
+      <ul>
+        <li>Get a Data Dump of the whole dataset
+        <li>Do SPARQL queries for the exact triples you need
+        <li>Crawl the Linked Data web for what you need (if no SPARQL endpoint is available)
+        <li>Convert data from non-RDF sources
+      </ul>
+      <details>
+      Query if you only need a subset or no dump is available
+      If there is no sparql endpoint, you might need to crawl the data
+      </details>
+      </section>
 
 
 
