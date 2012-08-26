@@ -48,7 +48,7 @@
 <section>
   <h4> Metcalfe's Law</h4>
   <figure>
-    <img alt="Metcalfe's Law" src="images/Network_effect.png" style="height:auto">
+    <img alt="Metcalfe's Law" src="images/Network_effect.png" style="height:auto; margin-top:20%">
   </figure>
   <details> 
   Each extra node in a network increases the number of possible connections, making every node in the network potentially more useful.
@@ -180,7 +180,8 @@ as the name is changed.
   <h3>Graph Data Structure</h3>
   <figure>
     <img alt="a graph data structure is a web of connected Things and Text (literals)" src="images/triplestore-data-graph.png">
-  </figure>
+    </figure>
+
   <details>
   <p>A graph data structure is a web of connected Things and Text ('literals')</p>
   <p>
@@ -511,13 +512,137 @@ by only needing one vocabulary for everything.
   <li>Recreate the model you drew out as an 'RDF Skeleton'. 
   <li>Use <a href="">Linked Open Vocabularies</a> to find vocabulary terms 
   <li>Click <kbd>add prefix</kbd> to import vocabularies (you might start with <kbd>bibo</kbd> and <kbd>dcterms</kbd>).
-  <li>Add the prefix: <kbd>library</kbd> : <kbd>http://purl.org/library/</kbd>
-  <li>Add the prefix: <kbd>ex</kbd> : <kbd>http://example.org/</kbd> (this isn't real, but you can use it if you need to invent new vocabulary for your data in this exercise)
+  <li>Add the prefix: <kbd>ex</kbd> : <kbd>http://example.org/</kbd> (use this namespace if you need to invent vocabulary in this exercise)
   <li>Give every <strong>Thing</strong> an <code>rdf:type</code>
   <li>Think about what the best <em>identifier</em> to use for each type of thing in your model.
   <li>If you were to publish the data on your own website, what would the base URI be?
   <li>When you are finished, click <kbd>Export</kbd> then <kbd>RDF as turtle</kbd>, and save the file.
 </ul>
+</section>
+
+
+<section>
+  <h2>Turtle</h2>
+</section>
+
+<section>
+  <h3>Turtle</h3>
+  <ul>
+    <li>Terse Triple Language (TTL) <small>http://www.w3.org/2007/02/turtle/primer/</small>
+    <li>A human-readable notation for RDF
+    <li>Provides useful syntax for quickly hand-writing RDF
+    <li>Forms the basis of SPARQL queries
+  </ul>
+<details>
+</details>
+</section>
+
+<section>
+  <h4>Turtle: a statement </h4>
+  <br>
+  <code>
+    <pre>
+&lt;http://example.org/person/Thomas_Paine&gt; 
+    &lt;http://xmlns.com/foaf/0.1/name&gt; 
+        &quot;Thomas Paine&quot; .
+    </pre>
+</code>
+</section>
+
+<section>
+<h4>Turtle: abbreviated URI syntax </h4>
+  <br>
+
+  <code>
+    <pre>
+<strong class="highlight">@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .</strong>
+
+&lt;http://example.org/person/Thomas_Paine&gt; 
+    <strong class="highlight">foaf:name</strong> 
+        &quot;Thomas Paine&quot; .
+    </pre>
+</code>
+</section>
+
+<section>
+<h4>Turtle: adding more properties </h4>
+  <br>
+
+  <code>
+    <pre>
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+&lt;http://example.org/person/Thomas_Paine&gt; 
+    <strong class="highlight">rdf:type foaf:Person ; </strong> 
+    foaf:name &quot;Thomas Paine&quot; .
+    </pre>
+</code>
+<details>
+  the semi-colon separates properties
+</details>
+</section>
+
+<section>
+<h4>Turtle: links between things </h4>
+  <br>
+
+  <code>
+    <pre>
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+&lt;http://example.org/person/Thomas_Paine&gt; 
+    rdf:type foaf:Person ;
+    foaf:name &quot;Thomas Paine&quot; ;
+    <strong class="highlight">foaf:made 
+        &lt;http://example.org/text/CW33&gt; ;
+    </strong> 
+.
+    </pre>
+</code>
+<details>
+</details>
+</section>
+
+<section>
+<h4>Turtle: properties with many values </h4>
+  <br>
+
+  <code>
+    <pre>
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+&lt;http://example.org/person/Thomas_Paine&gt; 
+    rdf:type foaf:Person ;
+    foaf:name &quot;Thomas Paine&quot; ;
+    foaf:made 
+        &lt;http://example.org/text/CW33&gt; <strong class="highlight"> ,
+        &lt;http://example.org/text/CW65&gt;
+    </strong> 
+.
+    </pre>
+</code>
+<details>
+</details>
+</section>
+
+<section>
+<h4>Turtle: language codes </h4>
+  <br>
+
+  <code>
+    <pre>
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+
+&lt;http://example.org/text/CW65&gt; 
+  dcterms:title 
+    "THE AMERICAN CRISIS"<strong class="highlight">@en</strong> .
+ 
+    </pre>
+</code>
+<details>
+</details>
 </section>
 
 
