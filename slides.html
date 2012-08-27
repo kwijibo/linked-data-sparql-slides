@@ -252,7 +252,7 @@ Go to
 <section class="practical">
   <h3>Practical: thinking about data</h3>
   <p>Dream up at least 3 interesting questions you could ask of this data. eg: Who is the youngest author?</p>
-  <p>Dream up 2 questions you could ask if you had more data (more books, or more information about the books or authors or places, for example).
+  <p>Dream up at least 3 questions you could ask if you had more data (more books, or more information about the books or authors or places, for example).
   </p>
   <p>What data would you need to connect with to answer your questions?</p>
 </section>
@@ -572,6 +572,7 @@ by only needing one vocabulary for everything.
     <pre>
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
 &lt;http://example.org/person/Thomas_Paine&gt; 
     <strong class="highlight">rdf:type foaf:Person ; </strong> 
     foaf:name &quot;Thomas Paine&quot; .
@@ -590,6 +591,7 @@ by only needing one vocabulary for everything.
     <pre>
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
 &lt;http://example.org/person/Thomas_Paine&gt; 
     rdf:type foaf:Person ;
     foaf:name &quot;Thomas Paine&quot; ;
@@ -611,6 +613,7 @@ by only needing one vocabulary for everything.
     <pre>
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+
 &lt;http://example.org/person/Thomas_Paine&gt; 
     rdf:type foaf:Person ;
     foaf:name &quot;Thomas Paine&quot; ;
@@ -646,8 +649,26 @@ by only needing one vocabulary for everything.
 </section>
 
 
+<section class="practical">
+  <h3>Practical: Turtle</h3>
+  <ul>
+      <li>What extra data do you need to be able to answer the questions you came up with in the first exercise?
+      <li>Research the extra facts for a Book/Person/Place of your choosing (from your turtle document, saved in the previous exercise).
+      <li>Add the statements to your turtle file.
+      <li>Validate your turtle at <a href="http://www.rdfabout.com/demo/validator/">http://www.rdfabout.com/demo/validator/</a> (select <kbd>Notation 3</kbd> as "input format")
+  </ul>
+</section>
 
-
+<section>
+  <h4>Turtle: alternative RDF syntaxes</h4>
+  <ul>
+      <li>RDF/XML
+      <li>RDFa
+      <li>RDF/JSON
+      <li>JSON-LD
+      <li>Ntriples
+  </ul>
+</section>
 
 
 <section>
@@ -785,6 +806,128 @@ by only needing one vocabulary for everything.
     <li>RDF
     </ul>
 </section> 
+
+<section>
+  <h2>SPARQL Queries</h2>
+  <details>
+  </details>
+</section>
+
+<section>
+  <h3>It's all about patterns!</h3>
+  <ul class="incremental">
+    <li>Write an example of the kind of data you want to find
+    <li>Replace the values that will vary in the results, with placeholders (<em>variables</em>)
+  </ul> 
+  <details>
+  </details>
+</section>
+
+<section>
+  <h4>Patterns: start with sample data</h4>
+  <pre><code>
+&lt;http://example.info/book/123&gt;
+  rdf:type bibo:Book ;
+  dcterms:title "POEMS" ;
+  dcterms:published "1773" ;
+.
+  </code></pre>
+</section>
+
+<section>
+  <h4>Patterns: replace values with placeholders (variables)</h4>
+  <pre><code>
+<strong class="highlight">?book</strong>
+  rdf:type bibo:Book ;
+  dcterms:title <strong class="highlight">?title</strong> ;
+  dcterms:published "1773" ;
+.
+  </code></pre>
+</section>
+
+<section>
+<h3>Four types of query</h3>
+<ul>
+    <li>ASK
+    <li>SELECT
+    <li>DESCRIBE
+    <li>CONSTRUCT
+</ul>
+<details>
+</details>
+</section>
+
+<section>
+  <h4>ASK</h4>
+  <pre><code>
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+
+ASK WHERE {
+?book
+  rdf:type bibo:Book ;
+  dcterms:title ?title ;
+  dcterms:published "1773" ;
+.
+}
+  </code></pre>
+</section>
+
+<section>
+  <h4>SELECT</h4>
+  <pre><code>
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+
+SELECT ?book ?title 
+WHERE {
+?book
+  rdf:type bibo:Book ;
+  dcterms:title ?title ;
+  dcterms:published "1773" ;
+.
+}
+  </code></pre>
+</section>
+
+<section>
+  <h4>DESCRIBE</h4>
+  <pre><code>
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+
+DESCRIBE ?book 
+WHERE {
+?book
+  rdf:type bibo:Book ;
+  dcterms:title ?title ;
+  dcterms:published "1773" ;
+.
+}
+  </code></pre>
+</section>
+
+<section>
+  <h4>CONSTRUCT</h4>
+  <pre><code>
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX schema: &lt;http://schema.org/&gt;
+
+CONSTRUCT {
+  ?book rdf:type schema:Book .
+} 
+WHERE {
+  ?book rdf:type bibo:Book .
+}
+  </code></pre>
+</section>
+
+<section>
+  <h3>SPARQL Practical</h3>
+  <p>
+    See <a href="http://bit.ly/sparql-slides">Learn SPARQL practical tutorial</a>
+  </p>
+</section>
 
 <section>
   <h4>Strengths of SPARQL information retrieval</h4>
@@ -940,12 +1083,40 @@ WHERE
       </details>
   </section>
 
+  <section>
+    <h2>SPARQL Uses</h2>
+  </section>
+
+  <section>
+  <h3>Entity Recognition</h3>
+  <figure>
+  <a href="http://dbpedia-spotlight.github.com/demo/index.html">
+    <img alt="" src="images/dbpedia-spotlight.png">
+  </a>
+  </figure>
+<details>
+
+</details>
+</section>
+
+<section>
+  <h4>EuropeanaConnect Media Annotation</h4>
+  <figure>
+  <a href="http://dme.ait.ac.at/annotation/">
+    <img alt="" src="images/europeanaconnect.png">
+  </a>
+  </figure>
+<details>
+</details>
+</section>
+
+
 
 
 <section>
-  <h2>
+  <h3>
     Visualisation and User Interface patterns
-  </h2>
+  </h3>
   <details>Now we will look at some common visualisation patterns used with RDF data</details>
 </section>
 
